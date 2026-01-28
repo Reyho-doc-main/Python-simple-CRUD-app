@@ -107,18 +107,12 @@ def interface():
 
         elif choice == "delete":
             view_own_post()
-            post_id_input = input("Enter the Post ID of the post you want to delete (or type 'back' to go back): ")
-            if post_id_input.lower() == "back":
-                continue
-            else:
-                if post_id_input.isdigit():
-                    post_id = int(post_id_input)
-                    deleted = delete_post(post_id, current_user_id)
-                    if deleted:
-                        print("Post deleted successfully.")
-                    else:
-                        print("Failed to delete post. Make sure the Post ID is correct.")
-
+            pid = input("Post ID to delete: ")
+            if pid.isdigit():
+                if delete_post(int(pid), current_user_id):
+                    print("Post deleted.")
+                else:
+                    print("Failed to delete post.")
         else:
             print("Invalid option.")
 
