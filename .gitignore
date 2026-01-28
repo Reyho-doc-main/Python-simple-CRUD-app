@@ -8,6 +8,6 @@ __pycache__/
 # Ignore temporary VS Code runner files
 tempCodeRunnerFile.*
 
-# Ignore environment files (if you use virtualenv)
+# Ignore environment files
 venv/
 .env
